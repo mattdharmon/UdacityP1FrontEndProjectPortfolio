@@ -30,7 +30,7 @@ gulp.task('build', function() {
     })
     .pipe(react())
     .pipe(minify(path.MINIFIED_OUT))
-    .pipe(uglify(path.MINIFIED_OUT))
+    //.pipe(uglify(path.MINIFIED_OUT))
     .pipe(gulp.dest(path.DEST_DIST));
 });
 

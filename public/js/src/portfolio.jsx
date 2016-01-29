@@ -5,7 +5,8 @@ var projectData = [
     id: 1,
     name: "Online Resume",
     image_link: "public/images/spires.jpg",
-    link: "https://github.com/mattdharmon/UdacityP2FrontEndOnlineResume",
+    link: "https://github.com/mattdharmon/frontend-nanodegree-resume",
+    website: "http://mattdharmon.github.io/frontend-nanodegree-resume/",
     details: "This project was designed to help me learn how to parse a json file and translate the information into a human readable webpage."
   },
   {
@@ -13,6 +14,7 @@ var projectData = [
     name: "Classic Arcade Game Clone",
     image_link: "public/images/flower.jpg",
     link: "https://github.com/mattdharmon/UdacityP3FrontEndFrogger",
+    website: "https://github.com/mattdharmon/UdacityP3FrontEndFrogger",
     details: "This project was desinged to teach me Object Oriented Javascript and HTML5 Canvas by recreating the classic arcade game Frogger."
   },
   {
@@ -20,6 +22,7 @@ var projectData = [
     name: "Website Optimization",
     image_link: "public/images/gate.jpg",
     link: "https://github.com/mattdharmon/UdacityP4FrontEndOptimization",
+    website: "https://github.com/mattdharmon/UdacityP4FrontEndOptimization",
     details: "This project was designed to teach me how to optimize a website with a number of optimization- and performance-related issues so that it achieves a target PageSpeed score and runs at 60 frames per second."
   },
   {
@@ -27,6 +30,7 @@ var projectData = [
     name: "Neighborhood Map Project",
     image_link: "public/images/red_tree.jpg",
     link: "https://github.com/mattdharmon/UdacityP5FrontEndNeighborhoodProject",
+    website: "https://github.com/mattdharmon/UdacityP5FrontEndNeighborhoodProject",
     details: "This project was designed to teach me how to create a single page application and using third-party APIs for providing the data."
   },
   {
@@ -34,6 +38,7 @@ var projectData = [
     name: "Feed Reader Tester",
     image_link: "public/images/bird.jpg",
     link: "https://github.com/mattdharmon/UdacityP6FrontEndRSSFeedReaderTester",
+    website: "https://github.com/mattdharmon/UdacityP6FrontEndRSSFeedReaderTester",
     details: "This project was designed to teach me test driven development by completing a project started by another programmer that started the project."
   }
 ];
@@ -52,6 +57,7 @@ var Project = React.createClass({
           </div>
           <div className="card-action">
             <a href={this.props.link}>Github</a>
+            <a href={this.props.website}>Website</a>
           </div>
         </div>
       </div>
@@ -63,7 +69,7 @@ var Projects = React.createClass({
   render: function() {
     var projectNodes = this.props.data.map(function(project) {
       return (
-        <Project key={project.id} name={project.name} image_link={project.image_link} details={project.details} link={project.link} />
+        <Project key={project.id} {...project} />
       );
     });
     return (
